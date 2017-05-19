@@ -1,0 +1,105 @@
+4376f652-d882-4609-b5bf-e75640d572e8
+lkMGIQuJKw2s
+
+
+исходник - статья https://www.cancer.gov/about-cancer/treatment
+
+https://username:password@gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&features=keywords&keywords.limit=8
+username и password берутся из credentials, выданных при регистрации
+
+Response для данного request:
+{
+    "keywords": [{
+        "text": "clinical trials",
+        "relevance": 0.992026
+    }, {
+        "text": "treatment",
+        "relevance": 0.857553
+    }, {
+        "text": "cancer",
+        "relevance": 0.674691
+    }, {
+        "text": "research studies",
+        "relevance": 0.649462
+    }, {
+        "text": "hormone therapy",
+        "relevance": 0.637426
+    }, {
+        "text": "good option",
+        "relevance": 0.633623
+    }, {
+        "text": "radiation therapy",
+        "relevance": 0.633188
+    }, {
+        "text": "cancer treatment",
+        "relevance": 0.595123
+    }],
+    "language": "en"
+}
+
+Составим запрос для поиска на русском, французском и беларусском в google, для этого ключевые слова необходимо перевести на русский язык
+
+для перевода слова "cancer" будем иметь следующие наборы синсетов:
+1) cancer/рак, Злокачественная опухоль
+m1: Any malignant growth or tumor caused by abnormal and uncontrolled cell division; it may spread to other parts of the body through the lymphatic system or the blood stream
+m2: Group of diseases defined by unregulated cell growth and proliferation 
+m3: A disease in which the cells of a tissue undergo uncontrolled (and often rapid) proliferation
+m4: Cancer is a class of diseases in which a group of cells display uncontrolled growth.
+m5: Disease of uncontrolled cellular proliferation
+
+sinsets: cancer, malignant neoplastic disease, Malignant neoplasms, AIDS-related cancer, AKKK, Anti-cancer, Cancer aromatase, Cancer diagnosis, Cancer en cuirasse, Cancer medication, Cancer pathology, Cancer patient, Cancer signs, Cancer therapy, Cancerophobia, Cancerous, Cancerous tumor, Cancers, Carcinophobia, Deaths by cancer, Epithelial cancers, Invasive, Invasive cancer, Malignacy, Malignancies, Malignant cancer, Malignant growth, Malignant lesion, Malignant tumors, Malignant tumour, Microtumor, Signs of cancer, Solid cancer, Sporadic cancer, Tumor medication, Tumour virus
+
+2) Cancer/Рак
+m1: A small zodiacal constellation in the northern hemisphere; between Leo and Gemini
+m2: A constellation of the zodiac supposedly shaped like a crab. 
+m3: Cancer is one of the twelve constellations of the zodiac. 
+Cancer, Cancer constalation, Cancer constellation, Carcinos, Carcinus, Karkinos
+
+3) Cancer/Рак
+m1: Cancer is the fourth astrological sign, which is associated with the constellation Cancer.
+m2: A sign in the zodiac.
+
+4) Cancer/Cancer
+Cancer are a British death/thrash metal band formed in Ironbridge, Telford, Shropshire in 1988.
+
+5) Cancer/Cancer
+Cancer is the first full-length studio album by Australian hardcore/metalcore band Confession, released on 10 September 2009, through Resist Records.
+
+1) traitement/лечение
+m1: provided to improve a situation (especially medical procedures or applications that are intended to relieve illness or injury)
+m2: Medical care for an illness or injury.
+m3: A treatment or cure is applied after a medical problem has already started.
+e1: A treatment or cure is applied after a medical problem has already started. 
+e2 Cancer survivors who got radiation treatments as children have nearly twice the risk of developing diabetes as adults.
+e3: The change is due largely to the increased availability of antiretroviral treatment.
+treatment, intervention
+
+2) traitement/обращение
+m1: The management of someone or something
+treatment, handling
+e1: The treatment of water sewage
+e2: The right to equal treatment in the criminal justice system
+
+3)traitement/трактовка
+A manner of dealing with something artistically 
+
+4)Дискурс, доклад, лекция/discours
+An extended communication (often interactive) dealing with some particular topic
+e1: His treatment of the race question is badly biased
+discourse, treatment, discussion
+
+1) Клинические исследования/essai clinique
+m1: A rigorously controlled test of a new drug or a new invasive medical device on human subjects; in the United States it is conducted under the direction of the FDA before being made available for general clinical use 
+m2:  trials are prospective biomedical or behavioral research studies on human subjects that are designed to answer specific questions about biomedical or behavioral interventions, generating safety and efficacy data. 
+clinical trial, clinical test, Clinical trials, Clinical research trial, Clinical researcher, Clinical studies, Clinical study, Comparator Sourcing, Controlled clinical trial, Controlled trials, Device Clinical Trials, Drug studies, Drug tester, Drug trial, Human testing, Non-controlled studies, Novoclinica, Online clinical trial, Online clinical trials, Pharmaceutical testing, Pharmaceuticals testing, Placebo group, Study population, Uncontrolled trial
+
+
+context:
+When you need treatment for cancer, you have a lot to learn and think about.
+
+subject: you
+action: need:
+object: treatment for cancer
+
+1) m1: Require as useful, just, or proper
+necessitate, ask, call for, demand, involve, need, postulate, require, take
