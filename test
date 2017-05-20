@@ -4,35 +4,338 @@ lkMGIQuJKw2s
 
 исходник - статья https://www.cancer.gov/about-cancer/treatment
 
-https://username:password@gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&features=keywords&keywords.limit=8
+https://username:password@gateway.watsonplatform.net/natural-language-understanding/api/v1/analyze?version=2017-02-27&features=semantic_roles,keywords&semantic_roles.keywords=true&keywords.limit=6
 username и password берутся из credentials, выданных при регистрации
 
 Response для данного request:
 {
+    "semantic_roles": [{
+        "subject": {
+            "text": "you"
+        },
+        "sentence": " The types of treatment that you have will depend on the type of cancer you have and how advanced it is.",
+        "object": {
+            "text": "on the type of cancer you have",
+            "keywords": [{
+                "text": "type"
+            }, {
+                "text": "cancer"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "depend",
+                "tense": "future"
+            },
+            "text": "will depend",
+            "normalized": "will depend"
+        }
+    }, {
+        "subject": {
+            "text": "Some people with cancer",
+            "keywords": [{
+                "text": "people"
+            }, {
+                "text": "cancer"
+            }]
+        },
+        "sentence": " Some people with cancer will have only one treatment.",
+        "object": {
+            "text": "only one treatment",
+            "keywords": [{
+                "text": "treatment"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "have",
+                "tense": "future"
+            },
+            "text": "will have",
+            "normalized": "will have"
+        }
+    }, {
+        "subject": {
+            "text": "most people",
+            "keywords": [{
+                "text": "people"
+            }]
+        },
+        "sentence": " But most people have a combination of treatments, such as surgery with chemotherapy and/or radiation therapy.",
+        "object": {
+            "text": "a combination of treatments",
+            "keywords": [{
+                "text": "combination"
+            }, {
+                "text": "treatments"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "have",
+                "tense": "present"
+            },
+            "text": "have",
+            "normalized": "have"
+        }
+    }, {
+        "subject": {
+            "text": "You"
+        },
+        "sentence": " You may also have immunotherapy, targeted therapy, or hormone therapy.",
+        "object": {
+            "text": "immunotherapy, targeted therapy, or hormone therapy",
+            "keywords": [{
+                "text": "hormone therapy"
+            }, {
+                "text": "immunotherapy"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "have",
+                "tense": "future"
+            },
+            "text": "may also have",
+            "normalized": "may also have"
+        }
+    }, {
+        "subject": {
+            "text": "Clinical trials",
+            "keywords": [{
+                "text": "Clinical trials"
+            }]
+        },
+        "sentence": " Clinical trials might also be an option for you.",
+        "object": {
+            "text": "an option for you",
+            "keywords": [{
+                "text": "option"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "be",
+                "tense": "present"
+            },
+            "text": "might also be",
+            "normalized": "might also be"
+        }
+    }, {
+        "subject": {
+            "text": "people",
+            "keywords": [{
+                "text": "people"
+            }]
+        },
+        "sentence": " Clinical trials are research studies that involve people.",
+        "object": {
+            "text": "research studies",
+            "keywords": [{
+                "text": "research studies"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "involve",
+                "tense": "present"
+            },
+            "text": "involve",
+            "normalized": "involve"
+        }
+    }, {
+        "subject": {
+            "text": "they work"
+        },
+        "sentence": " Understanding what they are and how they work can help you decide if taking part in a trial is a good option for you.",
+        "object": {
+            "text": "you decide"
+        },
+        "action": {
+            "verb": {
+                "text": "help",
+                "tense": "future"
+            },
+            "text": "can help",
+            "normalized": "can help"
+        }
+    }, {
+        "subject": {
+            "text": "you"
+        },
+        "sentence": " Understanding what they are and how they work can help you decide if taking part in a trial is a good option for you.",
+        "object": {
+            "text": "part"
+        },
+        "action": {
+            "verb": {
+                "text": "take",
+                "tense": "future"
+            },
+            "text": "taking",
+            "normalized": "take"
+        }
+    }, {
+        "subject": {
+            "text": "taking part in a trial",
+            "keywords": [{
+                "text": "trial"
+            }]
+        },
+        "sentence": " Understanding what they are and how they work can help you decide if taking part in a trial is a good option for you.",
+        "object": {
+            "text": "a good option",
+            "keywords": [{
+                "text": "good option"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "be",
+                "tense": "present"
+            },
+            "text": "is",
+            "normalized": "be"
+        }
+    }, {
+        "subject": {
+            "text": "you"
+        },
+        "sentence": " When you need treatment for cancer, you have a lot to learn and think about.",
+        "object": {
+            "text": "treatment for cancer",
+            "keywords": [{
+                "text": "treatment"
+            }, {
+                "text": "cancer"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "need",
+                "tense": "present"
+            },
+            "text": "need",
+            "normalized": "need"
+        }
+    }, {
+        "subject": {
+            "text": "you"
+        },
+        "sentence": " When you need treatment for cancer, you have a lot to learn and think about.",
+        "object": {
+            "text": "a lot"
+        },
+        "action": {
+            "verb": {
+                "text": "have",
+                "tense": "present"
+            },
+            "text": "have",
+            "normalized": "have"
+        }
+    }, {
+        "subject": {
+            "text": "It"
+        },
+        "sentence": " It is normal to feel overwhelmed and confused.",
+        "object": {
+            "text": "normal"
+        },
+        "action": {
+            "verb": {
+                "text": "be",
+                "tense": "present"
+            },
+            "text": "is",
+            "normalized": "be"
+        }
+    }, {
+        "subject": {
+            "text": "all you can"
+        },
+        "sentence": " But, talking with your doctor and learning all you can about all your treatment options, including clinical trials, can help you make a decision you feel good about.",
+        "object": {
+            "text": "about all your treatment options, including clinical trials",
+            "keywords": [{
+                "text": "treatment options"
+            }, {
+                "text": "clinical trials"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "learn",
+                "tense": "present"
+            },
+            "text": "learning",
+            "normalized": "learn"
+        }
+    }, {
+        "subject": {
+            "text": "clinical trials",
+            "keywords": [{
+                "text": "clinical trials"
+            }]
+        },
+        "sentence": " But, talking with your doctor and learning all you can about all your treatment options, including clinical trials, can help you make a decision you feel good about.",
+        "object": {
+            "text": "about all your treatment options",
+            "keywords": [{
+                "text": "treatment options"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "include",
+                "tense": "present"
+            },
+            "text": "including",
+            "normalized": "include"
+        }
+    }, {
+        "subject": {
+            "text": "all your treatment options, including clinical trials,",
+            "keywords": [{
+                "text": "treatment options"
+            }, {
+                "text": "clinical trials"
+            }]
+        },
+        "sentence": " But, talking with your doctor and learning all you can about all your treatment options, including clinical trials, can help you make a decision you feel good about.",
+        "object": {
+            "text": "you make a decision you feel good about",
+            "keywords": [{
+                "text": "decision"
+            }]
+        },
+        "action": {
+            "verb": {
+                "text": "help",
+                "tense": "future"
+            },
+            "text": "can help",
+            "normalized": "can help"
+        }
+    }],
     "keywords": [{
         "text": "clinical trials",
-        "relevance": 0.992026
+        "relevance": 0.990117
     }, {
         "text": "treatment",
-        "relevance": 0.857553
+        "relevance": 0.842602
     }, {
         "text": "cancer",
-        "relevance": 0.674691
+        "relevance": 0.766056
     }, {
         "text": "research studies",
-        "relevance": 0.649462
+        "relevance": 0.744387
     }, {
         "text": "hormone therapy",
-        "relevance": 0.637426
-    }, {
-        "text": "good option",
-        "relevance": 0.633623
+        "relevance": 0.736107
     }, {
         "text": "radiation therapy",
-        "relevance": 0.633188
-    }, {
-        "text": "cancer treatment",
-        "relevance": 0.595123
+        "relevance": 0.733394
     }],
     "language": "en"
 }
@@ -103,3 +406,6 @@ object: treatment for cancer
 
 1) m1: Require as useful, just, or proper
 necessitate, ask, call for, demand, involve, need, postulate, require, take
+
+
+Semantic Roles: Spanish, English
