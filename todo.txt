@@ -1,12 +1,1 @@
-﻿TODO: Перечитать
-
-
-метод Леска «Гордость и предубеждение» и газеты Associated Press точность 85%
-
-Топ источников:
-Lesk, M. (1986). “Automatic sense disambiguation using machine readable dictionaries: how to
-tell a pine cone from an ice cream cone.” The 5th annual international conference on Systems
-documentation.
-
-
-Semantic Roles: Spanish, English
+﻿метод Леска «Гордость и предубеждение» и газеты Associated Press точность 80%
